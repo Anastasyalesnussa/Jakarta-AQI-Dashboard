@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anastasya Portfolio</title>
+
+  <!-- ✅ Add Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ====== About Section ====== */
+    .about-section {
+      position: relative;
+      text-align: center;
+      padding: 80px 20px;
+      background: url('images/about/2.jpg') no-repeat center center/cover;
+      background-attachment: fixed;
+      color: #fff;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .about-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+    }
+
+    .about-image img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ccc;
+      display: block;
+      margin: 0 auto 30px auto;
+      transition: transform 0.3s ease;
+    }
+
+    .about-image img:hover {
+      transform: scale(1.05);
+    }
+
+    .about-text {
+      max-width: 1000px;
+      margin: 0 auto;
+      color: #fff;
+      line-height: 1.9;
+      font-size: 1.25rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px 60px;
+      border-radius: 15px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+    }
+
+    .about-text p + p {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        padding: 60px 15px;
+      }
+
+      .about-section h1 {
+        font-size: 2rem;
+      }
+
+      .about-image img {
+        width: 150px;
+        height: 150px;
+      }
+
+      .about-text {
+        font-size: 1rem;
+        max-width: 90%;
+      }
+    }
+
+    /* ====== Projects Section ====== */
+    .projects-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+              url('images/projects/0.jpg') center center / cover no-repeat;
+         background-attachment: fixed;
+        color: #fff;
+        padding: 80px 20px;
+    }
+
+
+    .projects-section h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffffff; /* white text like About section */
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4); /* soft cyan glow */
+  text-align: center;
+}
+
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      background-color: #fff;
+      text-align: left;
+    }
+
+    .btn {
+      border-radius: 20px;
+    }
+
+    #skills {
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
+
+#skills h2 {
+  color: #222;
+  letter-spacing: 1px;
+}
+
+#skills .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+#skills .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#skills img {
+  transition: transform 0.3s ease;
+}
+
+#skills img:hover {
+  transform: scale(1.1);
+}
+
+/* ====== Contact Section ====== */
+#contact {
+  background-color: #121212;
+  color: #fff;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.social-link {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-5px);
+  opacity: 0.8;
+}
+
+.social-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.btn-outline-light {
+  color: #1a1a1a !important;       /* dark text */
+  border-color: #1a1a1a !important; /* dark border */
+  background-color: transparent !important;
+  font-weight: 500;
+}
+
+.btn-outline-light:hover {
+  color: #ffffff !important;        /* white text on hover */
+  background-color: #1a1a1a !important; /* dark fill on hover */
+  border-color: #1a1a1a !important;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ====== ABOUT SECTION ====== -->
+  <section id="about" class="about-section">
+    <h1>About</h1>
+    <div class="about-image">
+      <img src="images/about/1.jpeg" alt="Profile picture">
+    </div>
+    <div class="about-text">
+      <p>
+        Hello! I’m Anastasya, an engineer and researcher who loves using data to solve real-world problems. 
+        With a background in Oil and Gas Engineering and hands-on experience in petroleum and petrochemical projects, 
+        I’ve learned how to turn complex challenges into clear, practical solutions. 
+        My work has helped me build strong analytical thinking and a passion for making things work better through data.
+      </p>
+      <p>
+        Now, I’m focusing on data-driven projects in energy transition and decarbonization. 
+        I’m excited about using data analytics and machine learning to create smarter, more sustainable ways to manage energy and resources. 
+        Through this portfolio, I want to share my journey of learning, exploring, and building projects that make a positive impact.
+      </p>
+    </div>
+  </section>
+
+  <!-- ====== PROJECTS SECTION ====== -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h1>Projects</h1>
+      <div class="row justify-content-center">
+
+        <!-- Project 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="images/projects/1.jpg" class="card-img-top" alt="Project 1">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-semibold">Jakarta AQI Analysis</h5>
+              <p class="card-text flex-grow-1">
+                An interactive machine learning–based dashboard that forecasts Jakarta's Air Quality Index (AQI) 
+                from 2025–2030 using environmental policy and emission parameters.
+              </p>
+              <div class="mt-auto d-flex flex-wrap gap-2">
+  <!-- 🔗 GitHub Repository Button -->
+  <a href="https://github.com/Anastasyalesnussa/Jakarta-Air-Quality-Analysis" 
+     target="_blank" 
+     class="btn btn-outline-light btn-sm">
+     <i class="bi bi-github me-1"></i> View Repository
+  </a>
+
+  <!-- 🌐 Streamlit Web App Button -->
+  <a href="https://jakarta-aqi-dashboard.streamlit.app" 
+     target="_blank" 
+     class="btn btn-primary btn-sm">
+     <i class="bi bi-bar-chart-line me-1"></i> Open Dashboard
+  </a>
+</div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-semibold">Project 2</h5>
+              <p class="card-text flex-grow-1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat.
+              </p>
+              <div class="mt-auto">
+                <a href="#" class="btn btn-primary btn-sm me-2">Blog Post</a>
+                <a href="#" class="btn btn-secondary btn-sm">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-semibold">Project 3</h5>
+              <p class="card-text flex-grow-1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat.
+              </p>
+              <div class="mt-auto">
+                <a href="#" class="btn btn-primary btn-sm me-2">Blog Post</a>
+                <a href="#" class="btn btn-secondary btn-sm">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Skills Section ====== -->
+<section id="skills" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-5 fw-bold">Skills</h2>
+    <div class="row gy-4 justify-content-center">
+
+      <!-- Skill 1 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body text-center">
+            <img src="images/skills/1.png" alt="Python" class="mb-3" style="width:70px; height:70px;">
+            <h5 class="card-title fw-semibold">Python</h5>
+            <p class="card-text text-muted">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+            </p>
+            <a href="#" class="text-decoration-none fw-semibold text-primary">
+              Link to course or bootcamp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 2 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body text-center">
+            <img src="images/skills/2.png" alt="Data Visualization" class="mb-3" style="width:70px; height:70px;">
+            <h5 class="card-title fw-semibold">Data Visualization</h5>
+            <p class="card-text text-muted">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+            </p>
+            <a href="#" class="text-decoration-none fw-semibold text-primary">
+              Link to course or bootcamp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 3 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body text-center">
+            <img src="images/skills/3.png" alt="SQL" class="mb-3" style="width:70px; height:70px;">
+            <h5 class="card-title fw-semibold">SQL</h5>
+            <p class="card-text text-muted">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+            </p>
+            <a href="#" class="text-decoration-none fw-semibold text-primary">
+              Link to course or bootcamp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 4 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body text-center">
+            <img src="images/skills/4.png" alt="Data Storytelling" class="mb-3" style="width:70px; height:70px;">
+            <h5 class="card-title fw-semibold">Data Storytelling</h5>
+            <p class="card-text text-muted">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+            </p>
+            <a href="#" class="text-decoration-none fw-semibold text-primary">
+              Link to course or bootcamp
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== Contact Me Section ====== -->
+<section id="contact" class="py-5 text-white" style="background-color: #121212;">
+  <div class="container text-center">
+    <h2 class="mb-5 fw-bold">Contact Me</h2>
+
+    <!-- Social Icons Row -->
+    <div class="d-flex justify-content-center flex-wrap gap-5">
+      <!-- Gmail -->
+      <a href="mailto:your.email@example.com" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Gmail">
+        <img src="icons/gmail.png" alt="Gmail" class="social-icon">
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn">
+        <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
+      </a>
+
+      <!-- GitHub -->
+      <a href="#" class="social-link" data-bs-toggle="tooltip" data-bs-placement="top" title="GitHub">
+        <img src="icons/github.png" alt="GitHub" class="social-icon">
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- ✅ Add Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
+</script>
+
+</body>
+</html>
