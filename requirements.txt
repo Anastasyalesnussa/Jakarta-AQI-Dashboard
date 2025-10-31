@@ -1,0 +1,7 @@
+streamlit
+pandas
+numpy
+joblib
+folium
+streamlit-folium
+altair
