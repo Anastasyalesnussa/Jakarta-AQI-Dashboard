@@ -2,8 +2,7 @@ streamlit
 pandas
 numpy
 joblib
+scikit-learn
 folium
 streamlit-folium
 altair
-scikit-learn
-plotly
