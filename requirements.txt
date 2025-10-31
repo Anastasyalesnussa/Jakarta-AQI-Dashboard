@@ -5,3 +5,5 @@ joblib
 folium
 streamlit-folium
 altair
+scikit-learn
+plotly
